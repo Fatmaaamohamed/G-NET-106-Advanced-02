@@ -48,6 +48,22 @@ namespace G_NET_106_Advanced_02
         }
 
         #endregion
+
+        #region Task3.3
+        public static List<Product> FilterProducts (List<Product> catalog, Predicate<Product> match)
+        {       
+            List<Product> result = new List<Product>();
+            foreach (Product product in catalog)
+            {
+                if (match(product))
+                {
+                    result.Add(product);
+                }   
+            }
+            return result;
+        }
+
+        #endregion
     }
 }   
 

@@ -83,6 +83,20 @@
             }
 
             #endregion
+
+
+            #region Task3.3
+
+            Console.WriteLine();
+
+            Console.WriteLine("--- Low Stock Alert ---");
+
+            Filteration.FilterProducts(catalog, p => p.Stock < 20)
+                .ForEach(p => Console.WriteLine($"[Low Stock] {p.Name}, Only {p.Stock} left"));
+
+
+          
+            #endregion
         }
     }
 }
