@@ -22,5 +22,19 @@ namespace G_NET_106_Advanced_02
         }
 
         #endregion
+
+        #region Task3
+        public static List<Product> PrintReport(List<Product> catalog, Action<Product> format)
+        {
+            List<Product> result = new List<Product>();
+            foreach (Product product in catalog)
+            {
+                format(product);
+            }
+            return result;
+        }
+
+        #endregion
     }
-}
+}   
+

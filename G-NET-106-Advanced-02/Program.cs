@@ -45,6 +45,20 @@
 
 
             #endregion
+
+
+            #region Task3
+            Console.WriteLine("--- Short Report ---");
+
+            Filteration.PrintReport(catalog, p => Console.WriteLine($"Product: {p.Name}, Price: ${p.Price}"));
+
+            Console.WriteLine();
+
+            Console.WriteLine("--- Detailed Report ---");
+
+            Filteration.PrintReport(catalog, p => Console.WriteLine($"Product: {p.Name}, Category: {p.Category}, Price: ${p.Price}, Stock: {p.Stock}"));
+
+            #endregion
         }
     }
 }
