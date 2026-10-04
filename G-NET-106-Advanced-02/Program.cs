@@ -17,6 +17,34 @@
              new Product { Id = 9, Name = "Headphones", Category = "Electronics", Price = 150, Stock = 40 },
              new Product { Id = 10, Name = "Jacket", Category = "Clothing", Price = 120, Stock = 15 }
            };
+
+
+            #region Task1
+
+            Console.WriteLine("--- Electronics ---");
+            List<Product> electronics = Filteration.SearchProducts(catalog, p => p.Category == "Electronics");
+            Product.PrintProducts(electronics);
+            Console.WriteLine(" ");
+
+            Console.WriteLine("--- Under $50 ---");
+            List<Product> under50 = Filteration.SearchProducts(catalog, p => p.Price < 50);
+            Product.PrintProducts(under50);
+            Console.WriteLine(" ");
+
+            Console.WriteLine("--- In Stock ---");
+            List<Product> inStock = Filteration.SearchProducts(catalog, p => p.Stock > 0);
+            Product.PrintProducts(inStock);
+            Console.WriteLine(" ");
+
+
+            Console.WriteLine("--- Under $100 ---");
+            List<Product> under100 = Filteration.SearchProducts(catalog, p => p.Price < 100 &&  p.Category == "Clothing");
+            Product.PrintProducts(under100);
+            Console.WriteLine(" ");
+
+
+
+            #endregion
         }
     }
 }
