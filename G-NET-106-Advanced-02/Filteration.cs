@@ -35,6 +35,19 @@ namespace G_NET_106_Advanced_02
         }
 
         #endregion
+
+        #region Task3.2
+        public static List<T> TransformProducts<T>(List<Product> catalog, Func<Product, T> transform)
+        {
+            List<T> result = new List<T>();
+            foreach (Product product in catalog)
+            {
+                result.Add(transform(product));
+            }
+            return result;
+        }
+
+        #endregion
     }
 }   
 

@@ -59,6 +59,30 @@
             Filteration.PrintReport(catalog, p => Console.WriteLine($"Product: {p.Name}, Category: {p.Category}, Price: ${p.Price}, Stock: {p.Stock}"));
 
             #endregion
+
+            #region Task3.2
+
+            Console.WriteLine();
+            Console.WriteLine("--- Summary List ---");
+
+            List<string> summary = Filteration.TransformProducts(catalog, p => $"Product: {p.Name}, Price: ${p.Price}");
+            foreach (string item in summary)
+            {
+                Console.WriteLine(item);
+            }
+
+
+            Console.WriteLine(); 
+
+            Console.WriteLine("--- Price Label ---");
+
+            List<string> priceLabels = Filteration.TransformProducts(catalog, p => $"{p.Name}: {(p.Price > 100 ? "Expensive!" : "Affordable")}");
+            foreach (string item in priceLabels)
+            {
+                Console.WriteLine(item);
+            }
+
+            #endregion
         }
     }
 }
